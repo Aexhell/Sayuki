@@ -1,5 +1,3 @@
-const ping = require("../general/ping")
-
 module.exports = {
     name: "avatar",
     aliases: ["pfp", "icon","usericon","useravatar","userpfp"],
