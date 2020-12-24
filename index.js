@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
 const { resolve } = require("path");
-const config = require("./src/config.json");
+const config = require("./config.json");
 const walk = require("walk");
 
 fs.readdir("./src/events/", async (err, files) => {
