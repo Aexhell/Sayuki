@@ -1,0 +1,29 @@
+{
+  "name": "sayuki",
+  "version": "0.0.1",
+  "description": "This is a bot project I wanted to recode for the old times I was learning JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aexhell/sayuki.git"
+  },
+  "keywords": [
+    "sayuki",
+    "discord"
+  ],
+  "author": "Aexhell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aexhell/sayuki/issues"
+  },
+  "homepage": "https://github.com/aexhell/sayuki#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "walk": "^2.3.14"
+  }
+}
