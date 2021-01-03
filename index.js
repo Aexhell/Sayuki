@@ -35,6 +35,8 @@ walker.on("file", function (root, stats, next) {
   
     let props = require(`${resolve(root)}/${stats.name}`);
     let commandName = stats.name.split(".")[0];
+
+		console.log(`[LOADED] ${commandName} loaded!`);
   
     client.commands.set(commandName, props);
     props.aliases.forEach(alias => {
@@ -50,4 +52,4 @@ const server = http.createServer((req, res) => {
 });
 server.listen(3000);
   
-client.login(config.TOKEN);
+client.login(process.env.TOKEN);

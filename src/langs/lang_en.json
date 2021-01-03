@@ -1,0 +1,11 @@
+{
+	"langs": ["en","es"],
+	"commands": {
+		"ping": "{user}'s ping.",
+		"lang": {
+			"embedtitle": "{user} | Language",
+			"embeddesc": "Available languages: `en`, `es`.",
+			"changedsucess": "Changed language to English."
+		}
+	}
+}

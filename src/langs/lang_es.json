@@ -1,0 +1,11 @@
+{
+	"langs": ["en","es"],
+	"commands": {
+		"ping": "Ping de {user}.",
+		"lang": {
+			"embedtitle": "{user} | Idioma",
+			"embeddesc": "Idiomas disponibles: `en`, `es`.",
+			"changedsucess": "Idioma modificado a Español."
+		}
+	}
+}
