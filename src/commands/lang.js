@@ -32,5 +32,8 @@ module.exports = {
         message.channel.send("Didn't work. :(");
       });
 		}
+		else {
+			return message.channel.send(`:x: | ${storage.commands.lang.notalang}`)
+		}
 	}
 }

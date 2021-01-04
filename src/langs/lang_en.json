@@ -1,11 +1,22 @@
 {
 	"langs": ["en","es"],
+	"none": "None.",
+	"yes": "Yes.",
 	"commands": {
 		"ping": "{user}'s ping.",
 		"lang": {
 			"embedtitle": "{user} | Language",
 			"embeddesc": "Available languages: `en`, `es`.",
-			"changedsucess": "Changed language to English."
+			"changedsucess": "Changed language to English.",
+			"notalang": "That is not a lang!"
+		},
+		"avatar": "{user}'s Avatar",
+		"user": {
+			"title": "{user}'s Info",
+			"nickname": "Nickname",
+			"joindate": "Join Date",
+			"discorddate": "Discord Date",
+			"footer": "⚠️ If this wasn't the user you wanted, it means that the requested user wasn't found."
 		}
 	}
 }

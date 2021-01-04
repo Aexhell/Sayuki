@@ -4,10 +4,11 @@ module.exports = {
 	category: "user",
 	execute: async (client,message,args) => {
 		const Discord = require("discord.js");
+		const storage = client.storage.lang;
 		let target =
 			message.mentions.members.first() ||
 			message.guild.members.cache.find(u => u.id === args[0]) ||
-			message.guild.members.cache.find(u => u.user.username === args[0]) ||message.guild.members.cache.find(u => u.nickname === args[0]) || client.users.cache.find(u => u.id === args[0]) || message.member;
+			message.guild.members.cache.find(u => u.user.username === args[0]) || message.guild.members.cache.find(u => u.nickname === args[0]) || client.users.cache.find(u => u.id === args[0]) || message.member;
 
 		function timeConverter(UNIX_timestamp){
 			var a = new Date(UNIX_timestamp);
@@ -19,14 +20,20 @@ module.exports = {
 			return result;
 		}
 		
-		let embed = new Discord.MessageEmbed()
-			.setTitle(`${target.user.tag}'s Info`)
-			.setThumbnail(target.user.displayAvatarURL({ format: "png", size: 1024, dynamic: true }))
-			.setDescription(
-				`:id:: \`${target.user.id}\`\n:page_facing_up: Nickname: **${target.nickname ? target.nickname : "None."}**\n:robot: Bot: **${target.user.bot ? "Yes." : "No."}**\n:calendar:: Join Date: **${timeConverter(target.guild.joinedTimestamp)}**\n:calendar:: Discord Date: **${timeConverter(target.user.createdTimestamp)}**`
-				)
-			.setColor("RANDOM")
-			.setFooter(`If this wasn't the user you wanted, it means that the requested user wasn't found.`);
-		message.channel.send(embed);
+		let userEmbed = {
+			thumbnail: { 
+				url: target.user.displayAvatarURL(),
+				width: 512,
+				height: 512
+			},
+			title: storage.commands.user.title.replace("{user}", target.user.tag, "gi"),
+			description: 
+				`:id:: \`${target.user.id}\`\n` + `:page_facing_up: ${storage.commands.user.nickname} **${target.nickname ? target.nickname : storage.none}**\n` + 
+				`:robot: Bot: **${target.user.bot ? storage.yes : "No."}**\n` + 
+				`:calendar: ${storage.commands.user.joindate}: **${timeConverter(target.guild.joinedTimestamp)}**\n` + `:calendar: ${storage.commands.user.discorddate}: **${timeConverter(target.user.createdTimestamp)}**`,
+			color: "RANDOM",
+			footer: { text: storage.commands.user.footer }
+		}
+		message.channel.send({ embed: userEmbed });
 	}
 }

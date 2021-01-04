@@ -1,11 +1,22 @@
 {
 	"langs": ["en","es"],
+	"none": "Ninguno.",
+	"yes": "Sí.",
 	"commands": {
 		"ping": "Ping de {user}.",
 		"lang": {
 			"embedtitle": "{user} | Idioma",
 			"embeddesc": "Idiomas disponibles: `en`, `es`.",
-			"changedsucess": "Idioma modificado a Español."
+			"changedsucess": "Idioma modificado a Español.",
+			"notalang": "¡Eso no es un idioma!"
+		},
+		"avatar": "Avatar de {user}",
+		"user": {
+			"title": "Información sobre {user}",
+			"nickname": "Apodo",
+			"joindate": "Fecha de Ingreso",
+			"discorddate": "Fecha de creación de Discord",
+			"footer": "⚠️ Si este no es el usuario solicitado, es que no ha sido encontrado."
 		}
 	}
 }
