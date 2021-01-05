@@ -25,7 +25,6 @@
     "discord.js": "^12.5.1",
     "fs": "0.0.1-security",
     "mongoose": "^5.11.9",
-    "path": "^0.12.7",
-    "walk": "^2.3.14"
+    "superagent": "^6.1.0"
   }
 }

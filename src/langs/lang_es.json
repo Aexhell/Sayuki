@@ -1,14 +1,55 @@
 {
+	"lang": "es",
 	"langs": ["en","es"],
 	"none": "Ninguno.",
 	"yes": "Sí.",
+	"usernotfound": "Usuario no encontrado.",
 	"commands": {
-		"ping": "Ping de {user}.",
+		"ping": {
+			"start": "Calculando ping...",
+			"title": "Sayuki | Latencia",
+			"bot": "💓 Latencia del Bot",
+			"api": "📡 Latencia de Discord",
+			"footer": "Los datos no son 100% correctos."
+		},
+		"help": {
+			"title": "Sayuki | Ayuda",
+			"general":  "`about`, `bugreport`, `help`, `lang`, `ping`.",
+			"mod": "`avatar`, `clear`, `userinfo`.",
+			"eco": "`money`.",
+			"fun": "`hug`.",
+			"economy": "Economía:",
+			"funtitle": "Diversión:"
+		},
 		"lang": {
 			"embedtitle": "{user} | Idioma",
 			"embeddesc": "Idiomas disponibles: `en`, `es`.",
 			"changedsucess": "Idioma modificado a Español.",
 			"notalang": "¡Eso no es un idioma!"
+		},
+		"about": {
+			"title": "Sayuki | Acerca del Bot",
+			"dev": "Desarrollador:",
+			"date": "Hecho en:",
+			"library": "Libreria:",
+			"channels": "Canales",
+			"channels2": "canales"
+		},
+		"clear": {
+			"cleared": "{amount} mensajes han sido borrados.",
+			"err": "No puedes borrar más de 99 mensajes."
+		},
+		"hug": {
+			"desc": "abrazó a {user2}!",
+			"powered": "Usando la API de Aexhell.",
+			"yourself": "¿Te vas a abrazar a ti mismo?"
+		},
+		"bug": {
+			"err": "¡Debes agregar el bug detectado!",
+			"confirm": "¿Seguro que quieres reportar este bug?",
+			"reported": "Bug reportado.",
+			"desc": "Tu reporte será enviado al equipo de Sayuki para poder arreglar el bug, así que por favor, usa buena gramática.",
+			"timeout": "Tiempo excedido."
 		},
 		"avatar": "Avatar de {user}",
 		"user": {
@@ -17,6 +58,12 @@
 			"joindate": "Fecha de Ingreso",
 			"discorddate": "Fecha de creación de Discord",
 			"footer": "⚠️ Si este no es el usuario solicitado, es que no ha sido encontrado."
+		},
+		"money": {
+			"title": "{user} | Banco",
+			"desc": "Este usuario tiene actualmente **{coins}** monedas.",
+			"footer": "Las monedas aún no poseen uso alguno.",
+			"err": "¡Este usuario no tiene monedas!"
 		}
 	}
 }

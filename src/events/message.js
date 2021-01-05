@@ -14,7 +14,7 @@ module.exports = async (client, message) => {
 
 	UserSchema.findOne({
     userID: message.author.id
-  }, (err, user) => {
+  }, async (err, user) => {
     if (err) {
       console.error(err);
 		}
@@ -23,10 +23,21 @@ module.exports = async (client, message) => {
 				_id: mongoose.Types.ObjectId(),
         userID: message.author.id,
         lang: "lang_en",
-      	dev: false
+      	dev: false,
+				money: 0
       });
-    	return newUserSchema.save();
+			
+    	await newUserSchema.save();
+			client.emit("message", (client, message));
+			return;
   	}
+		else {
+			let giving = Math.floor(Math.random() * 3);
+
+			user.money = user.money + giving;
+			user.save();
+		}
+
 		var lang = require(`../langs/${user.lang}.json`);
 		const storage = {
 			lang: lang

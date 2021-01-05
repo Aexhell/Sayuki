@@ -1,14 +1,55 @@
 {
+	"lang": "en",
 	"langs": ["en","es"],
 	"none": "None.",
 	"yes": "Yes.",
+	"usernotfound": "User not found.",
 	"commands": {
-		"ping": "{user}'s ping.",
+		"ping": {
+			"start": "Calculating ping...",
+			"title": "Sayuki | Latency",
+			"bot": "💓 Bot Latency",
+			"api": "📡 API Latency",
+			"footer": "The data is not 100% accurate."
+		},
+		"help": {
+			"title": "Sayuki | Help",
+			"general":  "`about`, `bugreport`, `help`, `lang`, `ping`.",
+			"mod": "`avatar`, `clear`, `userinfo`.",
+			"eco": "`money`.",
+			"fun": "`hug`.",
+			"economy": "Economy:",
+			"funtitle": "Fun:"
+		},
+		"about": {
+			"title": "Sayuki | About the bot",
+			"dev": "Developer:",
+			"date": "Made in:",
+			"library": "Library:",
+			"channels": "Channels",
+			"channels2": "channels"
+		},
 		"lang": {
 			"embedtitle": "{user} | Language",
 			"embeddesc": "Available languages: `en`, `es`.",
 			"changedsucess": "Changed language to English.",
 			"notalang": "That is not a lang!"
+		},
+		"clear": {
+			"cleared": "{amount} messages has been deleted.",
+			"err": "You can't delete more than 99 messages."
+		},
+		"hug": {
+			"desc": "hugged {user2}!",
+			"powered": "Powered by Aexhell's API.",
+			"yourself": "Do you wanna hug yourself?"
+		},
+		"bug": {
+			"err": "You must add a bug!",
+			"confirm": "Are you sure you wanna send this?",
+			"reported": "Bug reported.",
+			"desc": "Your bug report is going to be sent to the Sayuki Team for fixing it. Use English or another language in the report and good grammar.",
+			"timeout": "Time exceeded."
 		},
 		"avatar": "{user}'s Avatar",
 		"user": {
@@ -17,6 +58,12 @@
 			"joindate": "Join Date",
 			"discorddate": "Discord Date",
 			"footer": "⚠️ If this wasn't the user you wanted, it means that the requested user wasn't found."
+		},
+		"money": {
+			"title": "{user} | Bank",
+			"desc": "This user has **{coins}** coins.",
+			"footer": "The coins doesn't have any use by now.",
+			"err": "This user doesn't have coins!"
 		}
 	}
 }

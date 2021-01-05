@@ -3,11 +3,32 @@ module.exports = {
   aliases: ["pong"],
   category: "general",
   execute: async (client, message, args) => {
-		const UserSchema = require("../models/user.js");
+		const storage = client.storage.lang.commands.ping;
 
-		let str = client.storage.lang.commands.ping;
-		let newStr = str.replace("{user}", message.author.tag, "gi");
+		message.channel.send(storage.start).then(resultMsg => {
+			const ping = resultMsg.createdTimestamp - message.createdTimestamp;
 
-    message.channel.send(newStr);
+			let embed = {
+				title: storage.title,
+				color: "RANDOM",
+				fields: [
+					{
+						name: storage.bot,
+						value: `**${ping}** ms.`
+					},
+					{
+						name: storage.api,
+						value: `**${client.ws.ping}** ms.`
+					}
+				],
+				footer: {
+					text: storage.footer,
+					icon_url: client.user.displayAvatarURL()
+				}
+			}
+
+			message.channel.send({ embed: embed });
+			resultMsg.delete();
+		});
   }
 }

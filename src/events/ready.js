@@ -13,6 +13,17 @@ module.exports = async client => {
       console.error(`[ERROR] Unable to connect to the Mongo database.`);
       return process.exit(1);
     }
-    console.info(`[INFO] Connected to the Mongo database.`)
+    console.info(`[INFO] Connected to the Mongo database.`);
+
+		setInterval(function() {
+			let arrayStatus = [
+				`.s help | v${client.config.version}`,
+				`${client.guilds.cache.size} servers! ❤️`,
+				`${client.users.cache.size} users! ❤️`
+			];
+			let result = arrayStatus[Math.floor(Math.random() * arrayStatus.length)];
+
+			client.user.setPresence({ activity: { name: result }, status: 'online' });
+		}, 300000);
   });
 }
