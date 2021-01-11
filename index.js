@@ -1,15 +1,10 @@
-const Discord = require("discord.js");
-const client = new Discord.Client();
-const fs = require("fs");
-const config = require("./config.json");
+const Discord = require("discord.js"), client = new Discord.Client(), fs = require("fs"), config = require("./src/utils/config.json");
 
 client.commands = new Discord.Collection();
-client.categories = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.config = config;
 
-const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
-const eventFiles = fs.readdirSync('./src/events').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js')), eventFiles = fs.readdirSync('./src/events').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
 	const command = require(`./src/commands/${file}`);
@@ -25,8 +20,7 @@ for (const file of eventFiles) {
 	client.on(eventName, event.bind(null, client));
 }
   
-const http = require('http');
-const server = http.createServer((req, res) => {
+const http = require('http'), server = http.createServer((req, res) => {
   res.writeHead(200);
   res.end(`OK`);
 });

@@ -1,7 +1,6 @@
 module.exports = {
 	name: "avatar",
 	aliases: ["pfp", "icon"],
-	category: "user",
 	execute: async (client,message,args) => {
 		const storage = client.storage.lang;
 		let target =

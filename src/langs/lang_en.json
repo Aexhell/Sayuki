@@ -1,7 +1,7 @@
 {
 	"lang": "en",
 	"langs": ["en","es"],
-	"none": "None.",
+	"none": "None",
 	"yes": "Yes.",
 	"usernotfound": "User not found.",
 	"commands": {
@@ -12,21 +12,55 @@
 			"api": "📡 API Latency",
 			"footer": "The data is not 100% accurate."
 		},
+		"google": {
+			"title": "Google Image Search"
+		},
+		"hastebin": {
+			"result": "Upload successful! You can see it in {r}",
+			"err": "Upload failed. Service probably not available.",
+			"args": "Missing content.",
+			"uploading": "Uploading"
+		},
+		"github": {
+			"title": "{user}'s GitHub",
+			"bio": "Biography:",
+			"location": "Location:",
+			"register": "Join Date:",
+			"err": "You need to add a GitHub username.",
+			"notfound": "User not found.",
+			"repos": {
+				"title": "Repositories:",
+				"value": "**{value}** repositories."
+			},
+			"followers": {
+				"title": "Followers:",
+				"value": "**{value}** followers."
+			}
+		},
 		"help": {
 			"title": "Sayuki | Help",
-			"general":  "`about`, `bugreport`, `help`, `lang`, `ping`.",
+			"general":  "`about`, `bugreport`, `help`, `lang`, `ping`, `imgur`, `google`.",
 			"mod": "`avatar`, `clear`, `userinfo`.",
+			"commands": "**{c}** commands in total.",
 			"eco": "`money`.",
 			"fun": "`hug`.",
+			"dev": "Developers:",
+			"developers": "`hastebin`, `github`.",
 			"economy": "Economy:",
 			"funtitle": "Fun:"
+		},
+		"image": {
+			"uploaded": "Uploaded by {user}",
+			"args": "You gotta add something!",
+			"search": "Searching on Imgur...",
+			"nothing": ":x: I couldn't find any image!"
 		},
 		"about": {
 			"title": "Sayuki | About the bot",
 			"dev": "Developer:",
 			"date": "Made in:",
 			"library": "Library:",
-			"channels": "Channels",
+			"channels": "Channels:",
 			"channels2": "channels"
 		},
 		"lang": {
@@ -37,7 +71,8 @@
 		},
 		"clear": {
 			"cleared": "{amount} messages has been deleted.",
-			"err": "You can't delete more than 99 messages."
+			"err": "You can't delete more than 99 messages.",
+			"perms": "You don't have permissions."
 		},
 		"hug": {
 			"desc": "hugged {user2}!",

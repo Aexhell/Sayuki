@@ -1,7 +1,7 @@
 {
 	"lang": "es",
 	"langs": ["en","es"],
-	"none": "Ninguno.",
+	"none": "Ninguno",
 	"yes": "Sí.",
 	"usernotfound": "Usuario no encontrado.",
 	"commands": {
@@ -12,14 +12,48 @@
 			"api": "📡 Latencia de Discord",
 			"footer": "Los datos no son 100% correctos."
 		},
+		"google": {
+			"title": "Busqueda de Imagenes de Google"
+		},
+		"hastebin": {
+			"result": "¡Subida exitosa! Puedes verla en {r}",
+			"err": "Subida fallida. El servicio posiblemente no está disponible.",
+			"args": "Falta contenido.",
+			"uploading": "Subiendo"
+		},
+		"github": {
+			"title": "GitHub de {user}",
+			"bio": "Biografía:",
+			"location": "Ubicación:",
+			"register": "Registrado el:",
+			"err": "Tienes que agregar un nombre de usuario de GitHub.",
+			"notfound": "El usuario no fue encontrado.",
+			"repos": {
+				"title": "Repositorios:",
+				"value": "**{value}** repositorios."
+			},
+			"followers": {
+				"title": "Seguidores:",
+				"value": "**{value}** seguidores."
+			}
+		},
 		"help": {
 			"title": "Sayuki | Ayuda",
-			"general":  "`about`, `bugreport`, `help`, `lang`, `ping`.",
+			"general":  "`about`, `bugreport`, `help`, `lang`, `ping`, `imgur`, `google`.",
+			"commands": "**{c}** comandos en total.",
 			"mod": "`avatar`, `clear`, `userinfo`.",
 			"eco": "`money`.",
 			"fun": "`hug`.",
+			"dev": "Desarrolladores:",
+			"developers": "`hastebin`, `github`.",
 			"economy": "Economía:",
 			"funtitle": "Diversión:"
+		},
+		"image": {
+			"uploaded": "Subido por {user}",
+			"args": "¡Tienes que agregar algo!",
+			"search": "Buscando fotos en Imgur...",
+			"nothing": ":x: ¡No encontré ninguna imagen!"
 		},
 		"lang": {
 			"embedtitle": "{user} | Idioma",
@@ -32,12 +66,13 @@
 			"dev": "Desarrollador:",
 			"date": "Hecho en:",
 			"library": "Libreria:",
-			"channels": "Canales",
+			"channels": "Canales:",
 			"channels2": "canales"
 		},
 		"clear": {
 			"cleared": "{amount} mensajes han sido borrados.",
-			"err": "No puedes borrar más de 99 mensajes."
+			"err": "No puedes borrar más de 99 mensajes.",
+			"perms": "You don't have permissions."
 		},
 		"hug": {
 			"desc": "abrazó a {user2}!",

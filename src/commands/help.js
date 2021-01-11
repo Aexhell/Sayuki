@@ -12,6 +12,7 @@ module.exports = {
 			},
 			title: storage.title,
 			color: "RANDOM",
+			description: storage.commands.replace("{c}",client.commands.array().length-1),
 			fields: [
 				{
 					name: "General:",
@@ -24,6 +25,10 @@ module.exports = {
 				{
 					name: storage.economy,
 					value: storage.eco
+				},
+				{
+					name: storage.dev,
+					value: storage.developers
 				},
 				{
 					name: storage.funtitle,

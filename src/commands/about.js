@@ -34,12 +34,12 @@ module.exports = {
 					inline: true
 				},
 				{
-					name: "Servers",
+					name: "Servers:",
 					value: `**${client.guilds.cache.size}** servers.`,
 					inline: true
 				},
 				{
-					name: "Users",
+					name: "Users:",
 					value: `**${client.guilds.cache.size}** users.`,
 					inline: true
 				},

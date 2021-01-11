@@ -13,7 +13,7 @@ module.exports = {
 
 		if (target.user.id === message.author.id) return message.channel.send(storage.yourself);
 
-		superagent.get("https://api.aexhell.ml/v2/get/hug/").end((request,response) => {
+		superagent.get("https://api.aexhell.repl.co/v2/get/hug/").end((request,response) => {
 			let hugEmbed = {
 				description: `**${message.author.username}**${storage.desc.replace("{user2}", `**${target.user.username}**`)}`,
 				color: "RANDOM",

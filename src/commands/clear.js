@@ -12,6 +12,8 @@ module.exports = {
 			return message.channel.send(":x: Usage: `.s clear 10`");
 		}
 
+		if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`:x: ${storage.perms}`);
+
 		if (amount > 99) return message.channel.send(storage.err);
 
 		await channel.bulkDelete(amount+1);

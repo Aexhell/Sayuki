@@ -1,7 +1,6 @@
 module.exports = {
   name: "ping",
   aliases: ["pong"],
-  category: "general",
   execute: async (client, message, args) => {
 		const storage = client.storage.lang.commands.ping;
 
