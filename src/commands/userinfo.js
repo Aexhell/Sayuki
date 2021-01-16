@@ -29,10 +29,14 @@ module.exports = {
 			description: 
 				`:id:: \`${target.user.id}\`.\n` + `:page_facing_up: ${storage.commands.user.nickname}: **${target.nickname ? target.nickname : storage.none}.**\n` + 
 				`:robot: Bot: **${target.user.bot ? storage.yes : "No."}**\n` + 
-				`:calendar: ${storage.commands.user.joindate}: **${timeConverter(target.guild.joinedTimestamp)}**\n` + `:calendar: ${storage.commands.user.discorddate}: **${timeConverter(target.user.createdTimestamp)}**`,
+				`:calendar: ${storage.commands.user.joindate}: **${timeConverter(target.guild.joinedTimestamp)}**\n` + `:calendar: ${storage.commands.user.discorddate}: **${timeConverter(target.user.createdTimestamp)}**\n \n` +
+				`:rocket: Roles: **${target.roles.cache.size-1 ? target.roles.cache.size-1 : storage.none}**${target.roles.cache.filter(r => r.id !== message.guild.id).map(roles => " - " + `\`${roles.name}\``).join(", ") + "." || `.`}`,
 			color: "RANDOM",
 			footer: { text: storage.commands.user.footer }
 		}
+
+		if (target.roles.cache.size-1 > 15) userEmbed.description = `:id:: \`${target.user.id}\`.\n` + `:page_facing_up: ${storage.commands.user.nickname}: **${target.nickname ? target.nickname : storage.none}.**\n` + `:robot: Bot: **${target.user.bot ? storage.yes : "No."}**\n` +  `:calendar: ${storage.commands.user.joindate}: **${timeConverter(target.guild.joinedTimestamp)}**\n` + `:calendar: ${storage.commands.user.discorddate}: **${timeConverter(target.user.createdTimestamp)}**`;
+
 		message.channel.send({ embed: userEmbed });
 	}
 }
