@@ -1,5 +1,5 @@
 .env
-config.json
+src/utils/config.json
 package-lock.json
-node-modules/
+/node-modules/
 src/commands/eval.js

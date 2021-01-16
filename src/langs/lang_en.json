@@ -12,6 +12,14 @@
 			"api": "📡 API Latency",
 			"footer": "The data is not 100% accurate."
 		},
+		"poll": {
+			"args": "Use: `.s poll {title} | {option1} | {option2}`",
+			"footer": "Poll by {author}"
+		},
+		"support": {
+			"title": "Sayuki | Support",
+			"desc": "📩 [Invite](https://sayuki.ml)\n<:github:800007830903849041> [GitHub Repository](https://github.com/saxeum/sayuki)"
+		},
 		"google": {
 			"title": "Google Image Search"
 		},
@@ -40,7 +48,7 @@
 		"help": {
 			"title": "Sayuki | Help",
 			"general":  "`about`, `bugreport`, `help`, `lang`, `ping`, `imgur`, `google`.",
-			"mod": "`avatar`, `clear`, `userinfo`.",
+			"mod": "`avatar`, `clear`, `userinfo`, `poll`.",
 			"commands": "**{c}** commands in total.",
 			"eco": "`money`.",
 			"fun": "`hug`.",

@@ -8,6 +8,7 @@ module.exports = async (client, message) => {
 	var prefix = null;
 	for (let thisPrefix of prefixes) {
 		if (messageArray[0].startsWith(thisPrefix)) prefix = thisPrefix;
+		client.prefix = prefix;
 	}
 
 	const UserSchema = require("../models/user.js");

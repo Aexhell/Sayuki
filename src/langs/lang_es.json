@@ -15,6 +15,14 @@
 		"google": {
 			"title": "Busqueda de Imagenes de Google"
 		},
+		"poll": {
+			"args": "Uso: `.s poll {titulo} | {opción1} | {opción2}`",
+			"footer": "Encuesta por {author}"
+		},
+		"support": {
+			"title": "Sayuki | Soporte",
+			"desc": "📩 [Invitar al bot a tu servidor](https://sayuki.ml)\n<:github:800007830903849041> [Repositorio de GitHub](https://github.com/saxeum/sayuki)"
+		},
 		"hastebin": {
 			"result": "¡Subida exitosa! Puedes verla en {r}",
 			"err": "Subida fallida. El servicio posiblemente no está disponible.",

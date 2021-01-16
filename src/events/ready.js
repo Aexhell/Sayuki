@@ -13,7 +13,7 @@ module.exports = async client => {
       console.error(`[ERROR] Unable to connect to the Mongo database.`);
       return process.exit(1);
     }
-    console.info(`[INFO] Connected to the Mongo database.`);
+    console.log(chalk.bgHex("#00cf00").hex("#000000").bold(`[INFO] Connected to the Mongo database.`));
 
 		setInterval(function() {
 			let arrayStatus = [
