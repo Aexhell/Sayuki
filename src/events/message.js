@@ -11,6 +11,8 @@ module.exports = async (client, message) => {
 		client.prefix = prefix;
 	}
 
+	if (!messageArray[0].startsWith(prefix)) return;
+
 	const UserSchema = require("../models/user.js");
 
 	UserSchema.findOne({
@@ -45,8 +47,6 @@ module.exports = async (client, message) => {
 		}
 
 		client.storage = storage;
-
-		if (!messageArray[0].startsWith(prefix)) return;
 		
 		let command = messageArray[1].toLowerCase();
 		let args = messageArray.slice(2);

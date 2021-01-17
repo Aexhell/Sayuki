@@ -21,7 +21,7 @@
 		},
 		"support": {
 			"title": "Sayuki | Soporte",
-			"desc": "📩 [Invitar al bot a tu servidor](https://sayuki.ml)\n<:github:800007830903849041> [Repositorio de GitHub](https://github.com/saxeum/sayuki)"
+			"desc": "📩 [Invitar al bot a tu servidor](https://sayuki.ml).\n<:github:800007830903849041> [Repositorio de GitHub](https://github.com/saxeum/sayuki)."
 		},
 		"hastebin": {
 			"result": "¡Subida exitosa! Puedes verla en {r}",
@@ -47,9 +47,9 @@
 		},
 		"help": {
 			"title": "Sayuki | Ayuda",
-			"general":  "`about`, `bugreport`, `help`, `lang`, `ping`, `imgur`, `google`.",
+			"general":  "`about`, `bugreport`, `help`, `lang`, `ping`, `imgur`, `google`, `support`.",
 			"commands": "**{c}** comandos en total.",
-			"mod": "`avatar`, `clear`, `userinfo`.",
+			"mod": "`avatar`, `clear`, `userinfo`, `guildinfo`.",
 			"eco": "`money`.",
 			"fun": "`hug`.",
 			"dev": "Desarrolladores:",
@@ -94,13 +94,43 @@
 			"desc": "Tu reporte será enviado al equipo de Sayuki para poder arreglar el bug, así que por favor, usa buena gramática.",
 			"timeout": "Tiempo excedido."
 		},
-		"avatar": "Avatar de {user}",
+		"avatar": {
+			"title": "Avatar de {user}",
+			"err": "Usuario no encontrado."
+		},
 		"user": {
 			"title": "Información sobre {user}",
 			"nickname": "Apodo",
 			"joindate": "Fecha de Ingreso",
 			"discorddate": "Fecha de creación de Discord",
-			"footer": "⚠️ Si este no es el usuario solicitado, es que no ha sido encontrado."
+			"footer": "⚠️ Si este no es el usuario solicitado, es que no ha sido encontrado.",
+			"status": {
+				"online": "🟢 **En Línea.**",
+				"idle:": "🟡 **Ausente.**",
+				"dnd": "🔴 **No Molestar.**",
+				"offline": "<:gray_circle:800291863352311818> **Desconectado.**"
+			}
+		},
+		"guild": {
+			"members": {
+				"title": "Miembros",
+				"value": "{m} miembros."
+			},
+			"region": {
+				"europe": ":flag_eu: Europa.",
+				"brazil": ":flag_br: Brasil.",
+				"japan": ":flag_jp: Japón.",
+				"russia": ":flag_ru: Rusia.",
+				"singapore": ":flag_si: Singapúr.",
+				"hongkong": ":flag_hk: Hong-Kong.",
+				"india": ":flag_in: India.",
+				"southafrica": ":flag_ss: Sudáfrica.",
+				"sydney": ":flag_sh: Sídney.",
+				"us-central": ":flag_us: América Central.",
+				"us-east": ":flag_us: América del Este.",
+				"us-west": ":flag_us: América del Oéste.",
+				"us-south": ":flag_us: América del Sur."
+			}
 		},
 		"money": {
 			"title": "{user} | Banco",

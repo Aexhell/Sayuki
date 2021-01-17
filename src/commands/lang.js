@@ -15,7 +15,7 @@ module.exports = {
 			return message.channel.send({ embed: initEmbed });
 		}
 
-		let langArg = args[0].toLowerCase();
+		let langArg = args[0].toLocaleLowerCase('en-US');
 		if (storage.langs.includes(langArg)) {
       UserSchema.findOneAndUpdate({
         userID: message.author.id

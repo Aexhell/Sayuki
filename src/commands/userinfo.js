@@ -4,6 +4,9 @@ module.exports = {
 	execute: async (client,message,args) => {
 		const Discord = require("discord.js");
 		const storage = client.storage.lang;
+		const mongoose = require("mongoose");
+		const UserSchema = require("../models/user.js");
+
 		let target =
 			message.mentions.members.first() ||
 			message.guild.members.cache.find(u => u.id === args[0]) ||
@@ -18,25 +21,39 @@ module.exports = {
 			var result = `${day}/${month}/${a.getFullYear()}`
 			return result;
 		}
+
+		var isStaff = "No.";
+
+		UserSchema.findOne({
+				userID: target.user.id
+			}, async (err, user) => {
+				if (user.dev) {
+					isStaff = storage.yes;
+				}
 		
-		let userEmbed = {
-			thumbnail: { 
-				url: target.user.displayAvatarURL(),
-				width: 512,
-				height: 512
-			},
-			title: storage.commands.user.title.replace("{user}", target.user.tag, "gi"),
-			description: 
-				`:id:: \`${target.user.id}\`.\n` + `:page_facing_up: ${storage.commands.user.nickname}: **${target.nickname ? target.nickname : storage.none}.**\n` + 
-				`:robot: Bot: **${target.user.bot ? storage.yes : "No."}**\n` + 
-				`:calendar: ${storage.commands.user.joindate}: **${timeConverter(target.guild.joinedTimestamp)}**\n` + `:calendar: ${storage.commands.user.discorddate}: **${timeConverter(target.user.createdTimestamp)}**\n \n` +
-				`:rocket: Roles: **${target.roles.cache.size-1 ? target.roles.cache.size-1 : storage.none}**${target.roles.cache.filter(r => r.id !== message.guild.id).map(roles => " - " + `\`${roles.name}\``).join(", ") + "." || `.`}`,
-			color: "RANDOM",
-			footer: { text: storage.commands.user.footer }
-		}
+				let userEmbed = {
+					thumbnail: { 
+						url: target.user.displayAvatarURL(),
+						width: 512,
+						height: 512
+					},
+					title: storage.commands.user.title.replace("{user}", target.user.tag, "gi"),
+					description: 
+						`:id:: \`${target.user.id}\`.\n` + `:page_facing_up: ${storage.commands.user.nickname}: **${target.nickname ? target.nickname : storage.none}.**\n` + 
+						`:robot: Bot: **${target.user.bot ? storage.yes : "No."}**\n` + 
+						`:calendar: ${storage.commands.user.joindate}: **${timeConverter(target.guild.joinedTimestamp)}**.\n` + `:calendar: ${storage.commands.user.discorddate}: **${timeConverter(target.user.createdTimestamp)}**.\n` + `*️⃣ Status: ${storage.commands.user.status[target.user.presence.status]}\n` + 
+						`:computer: Sayuki Team: **${isStaff}**\n \n` + 
+						`:rocket: Roles: **${target.roles.cache.size-1 ? target.roles.cache.size-1 + " - " : storage.none}**${target.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(", ") + "." || `.`}`,
+					color: "RANDOM",
+					footer: { text: storage.commands.user.footer }
+				}
 
-		if (target.roles.cache.size-1 > 15) userEmbed.description = `:id:: \`${target.user.id}\`.\n` + `:page_facing_up: ${storage.commands.user.nickname}: **${target.nickname ? target.nickname : storage.none}.**\n` + `:robot: Bot: **${target.user.bot ? storage.yes : "No."}**\n` +  `:calendar: ${storage.commands.user.joindate}: **${timeConverter(target.guild.joinedTimestamp)}**\n` + `:calendar: ${storage.commands.user.discorddate}: **${timeConverter(target.user.createdTimestamp)}**`;
+				if (target.roles.cache.size-1 > 15) userEmbed.description = `:id:: \`${target.user.id}\`.\n` + `:page_facing_up: ${storage.commands.user.nickname}: **${target.nickname ? target.nickname : storage.none}.**\n` + 
+						`:robot: Bot: **${target.user.bot ? storage.yes : "No."}**\n` + 
+						`:calendar: ${storage.commands.user.joindate}: **${timeConverter(target.guild.joinedTimestamp)}**.\n` + `:calendar: ${storage.commands.user.discorddate}: **${timeConverter(target.user.createdTimestamp)}**.\n` + `*️⃣ Status: ${storage.commands.user.status[target.user.presence.status]}\n` + 
+						`:computer: Sayuki Team: **${isStaff}**\n \n`;
 
-		message.channel.send({ embed: userEmbed });
+				message.channel.send({ embed: userEmbed });
+		});
 	}
 }

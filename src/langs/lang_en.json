@@ -18,7 +18,7 @@
 		},
 		"support": {
 			"title": "Sayuki | Support",
-			"desc": "📩 [Invite](https://sayuki.ml)\n<:github:800007830903849041> [GitHub Repository](https://github.com/saxeum/sayuki)"
+			"desc": "📩 [Invite](https://sayuki.ml).\n<:github:800007830903849041> [GitHub Repository](https://github.com/saxeum/sayuki)."
 		},
 		"google": {
 			"title": "Google Image Search"
@@ -47,8 +47,8 @@
 		},
 		"help": {
 			"title": "Sayuki | Help",
-			"general":  "`about`, `bugreport`, `help`, `lang`, `ping`, `imgur`, `google`.",
-			"mod": "`avatar`, `clear`, `userinfo`, `poll`.",
+			"general":  "`about`, `bugreport`, `help`, `lang`, `ping`, `imgur`, `google`, `support`.",
+			"mod": "`avatar`, `clear`, `userinfo`, `poll`, `guildinfo`.",
 			"commands": "**{c}** commands in total.",
 			"eco": "`money`.",
 			"fun": "`hug`.",
@@ -94,13 +94,43 @@
 			"desc": "Your bug report is going to be sent to the Sayuki Team for fixing it. Use English or another language in the report and good grammar.",
 			"timeout": "Time exceeded."
 		},
-		"avatar": "{user}'s Avatar",
+		"avatar": {
+			"title": "{user}'s Avatar",
+			"err": "User not found."
+		},
 		"user": {
 			"title": "{user}'s Info",
 			"nickname": "Nickname",
 			"joindate": "Join Date",
 			"discorddate": "Discord Date",
-			"footer": "⚠️ If this wasn't the user you wanted, it means that the requested user wasn't found."
+			"footer": "⚠️ If this wasn't the user you wanted, it means that the requested user wasn't found.",
+			"status": {
+				"online": ":green_circle: **Online.**",
+				"idle:": ":yellow_circle: **Idle.**",
+				"dnd": ":red_circle: **Do Not Disturb.**",
+				"offline": "<:gray_circle:800291863352311818> **Offline.**"
+			}
+		},
+		"guild": {
+			"members": {
+				"title": "Members",
+				"value": "{m} members."
+			},
+			"region": {
+				"europe": ":flag_eu: Europe.",
+				"brazil": ":flag_br: Brazil.",
+				"japan": ":flag_jp: Japan.",
+				"russia": ":flag_ru: Russia.",
+				"singapore": ":flag_si: Singapore.",
+				"hongkong": ":flag_hk: Hong-Kong.",
+				"india": ":flag_in: India.",
+				"southafrica": ":flag_ss: South Africa.",
+				"sydney": ":flag_sh: Sydney.",
+				"us-central": ":flag_us: US Central.",
+				"us-east": ":flag_us: US East.",
+				"us-west": ":flag_us: US West.",
+				"us-south": ":flag_us: US South."
+			}
 		},
 		"money": {
 			"title": "{user} | Bank",
